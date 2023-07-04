@@ -1,0 +1,14 @@
+"User Input Data"
+"...Enter the values you want..."
+Gender: 2
+HeadCircumference: 21
+ShoulderWidth: 19
+ChestWidth: 17
+Belly: 17
+Waist: 20
+Hips: 21
+ArmLength: 20
+ShoulderToWaist: 20
+WaistToKnee: 18
+LegLength: 22
+TotalHeight: 59
