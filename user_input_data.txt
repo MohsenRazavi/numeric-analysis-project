@@ -1,7 +1,7 @@
 "User Input Data"
 "...Enter the values you want..."
 Gender: 2
-HeadCircumference: 21
+HeadCircumference:20
 ShoulderWidth: 19
 ChestWidth: 17
 Belly: 17

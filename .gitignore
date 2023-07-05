@@ -2,3 +2,5 @@ Doc/
 venv/
 __pycache__
 .idea/
+*.png
+*.docx

@@ -8,7 +8,12 @@ import matplotlib.pyplot as plt
 body_measurements_df = pandas.read_csv('Body Measurements _ original_CSV.csv')
 
 with open('user_input_data.txt', 'r') as file:
-    user_data = [[float(s.strip().split(':')[1]) for s in file.readlines()[2:]]]
+    try:
+        user_data = [[float(s.strip().split(':')[1]) for s in file.readlines()[2:]]]
+    except:
+        print('Invalid input file')
+        exit()
+
 
 # separating inputs
 input_fields = ['Gender', 'HeadCircumference', 'ShoulderWidth', 'ChestWidth', 'Belly', 'Waist', 'Hips',
@@ -46,7 +51,7 @@ for i in input_fields:
     tmp_model.fit(np.nan_to_num(body_measurements_df[[i]]), np.nan_to_num(body_measurements_df['Age']))
     func = lambda x: tmp_model.coef_ * x + tmp_model.intercept_
     sns.set_style('darkgrid')
-    plt.title(f'Age based on {i}')
+    plt.title(f'Age based on {i} (unit: inch)')
     plt.scatter(body_measurements_df[i], body_measurements_df.Age)
     plt.plot(body_measurements_df[i], func(np.nan_to_num(body_measurements_df[[i]])), color='r')
     plt.xlabel(i)
